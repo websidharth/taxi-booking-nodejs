@@ -34,15 +34,26 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, "views", "index.html"));
 // });
 
- //app.use(asyncHandler(clientidMiddleware.verify));
+ app.use(asyncHandler(clientidMiddleware.verify));
 
 
 
 //route setup --- SWAGGER ---
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
- 
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs, 
-  {swaggerOptions: {
+
+app.use(
+  "/",
+  ...swaggerUi.serveFiles(swaggerDocs, {
+    swaggerOptions: {
+      deepLinking: false,
+    },
+  })
+);
+
+app.get(
+  "/",
+  swaggerUi.setup(swaggerDocs, {
+    swaggerOptions: {
       deepLinking: false,
     },
   })
