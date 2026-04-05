@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../config/ioc.types';
-import IUnitOfWork from '../repository/interfaces/iunitofwork.repository';
-import { IDateTimeService } from './interfaces/idatetime.service';
+import type IUnitOfWork from '../repository/interfaces/iunitofwork.repository';
+import type { IDateTimeService } from './interfaces/idatetime.service';
 import { INewsletterService } from './interfaces/Inewsletter.service';
 import { NewsletterTempletesModel } from '../models/newsletterTempletes.model';
 

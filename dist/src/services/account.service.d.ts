@@ -1,9 +1,9 @@
 import { users } from "@prisma/client";
 import { UserDto } from "../dtos/user.dto";
-import IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
+import type IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
 import { Role } from "../enum/user.enum";
 import { CreateUserModel } from "../models/user.model";
-import { IDateTimeService } from "./interfaces/idatetime.service";
+import type { IDateTimeService } from "./interfaces/idatetime.service";
 import { IAccountService } from "./interfaces/Iaccount.service";
 import { ResetPasswordModel } from "../models/forgot-password.model";
 import { LoginModel } from "../models/login.model";

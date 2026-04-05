@@ -1,10 +1,10 @@
 import { IUserService } from "./interfaces/Iuser.service";
 import { UpdateUserDto, UserDto } from "../dtos/user.dto";
-import IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
+import type IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
 import { Role } from "../enum/user.enum";
 import { CreateUserModel } from "../models/user.model";
 import { users } from "@prisma/client";
-import { IDateTimeService } from "./interfaces/idatetime.service";
+import type { IDateTimeService } from "./interfaces/idatetime.service";
 export declare class UserService implements IUserService {
     private unitOfWork;
     private dateTime;
