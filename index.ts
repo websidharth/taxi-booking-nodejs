@@ -40,9 +40,20 @@ app.use(express.json());
 
 //route setup --- SWAGGER ---
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
- 
-app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs, 
-  {swaggerOptions: {
+
+app.use(
+  "/",
+  ...swaggerUi.serveFiles(swaggerDocs, {
+    swaggerOptions: {
+      deepLinking: false,
+    },
+  })
+);
+
+app.get(
+  "/",
+  swaggerUi.setup(swaggerDocs, {
+    swaggerOptions: {
       deepLinking: false,
     },
   })
