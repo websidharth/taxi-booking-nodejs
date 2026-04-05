@@ -1,0 +1,90 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Role {
+    ADMIN
+    USER
+}
+
+model users {
+    id                       Int                   @default(autoincrement())
+    userId                   String                @id @unique
+    name                     String
+    userName                 String                @unique
+    phone                    String?
+    email                    String                @unique
+    password                 String
+    role                     Role                  @default(USER)
+    isActive                 Boolean               @default(false)
+    isEmailVerified          Boolean               @default(false)
+    emailVerificationToken   String?               @unique
+    emailVerificationExpires DateTime?
+    isPhoneVerified          Boolean               @default(false)
+    profileImageUrl          String?
+    loginAttempts            Int                   @default(0)
+    lastLoginAt              DateTime?
+    lastLoginIP              String?
+    createdAt                DateTime              @default(now())
+    updatedAt                DateTime?             @updatedAt
+    status                   Boolean               @default(true)
+    token                    String?                
+    tokenUpdated             Boolean              @default(false)          
+    refreshToken             String?                
+    userSms                  userSms[]
+    userEmail                userNewsletterEmail[] 
+    newsletterTempletes      newsletterTempletes[]
+    @@index([userId])
+    @@index([email]) 
+    @@index([phone]) 
+}
+
+model newsletterTempletes {
+    id           Int       @id @default(autoincrement())
+    newsletterId Int       @default(autoincrement()) @unique
+    userId       String
+    title        String
+    htmlContent  String
+    status       Boolean?  @default(true)
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime? @updatedAt
+    user         users?    @relation(fields: [userId], references: [userId])
+    userNewsletterEmail userNewsletterEmail[]
+    @@index([userId])
+    @@index([newsletterId]) 
+}
+  
+model userNewsletterEmail {
+  id             Int      @id @default(autoincrement()) 
+  userId         String
+  newsletterId   Int?
+  recipient      String
+  htmlContent    String 
+  subject        String?
+  status         String   @default("PENDING") // SENT/FAILED
+  errorMessage   String?
+  emailResponse  Json?
+  createdAt      DateTime @default(now())
+  sentAt         DateTime? 
+  user           users                 @relation(fields: [userId], references: [userId])
+  newsletter     newsletterTempletes?   @relation(fields: [newsletterId], references: [newsletterId])
+  @@index([userId])
+  @@index([newsletterId])
+  @@index([recipient])
+}
+ 
+model userSms {
+    id             Int      @id @default(autoincrement())
+    userId         String
+    phoneNumber    String
+    message        String
+    createdAt      DateTime @default(now())
+    status         String?
+    twilioResponse Json?
+    user           users?   @relation(fields: [userId], references: [userId])
+}

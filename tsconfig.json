@@ -1,0 +1,31 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+   
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "types": ["node", "express"], 
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true, 
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+ 
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+ 
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+     "esModuleInterop": true,
+  },
+  "include": ["index.ts", "src"],
+  "files": ["src/types/express.d.ts"]
+}
