@@ -34,7 +34,7 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, "views", "index.html"));
 // });
 
- app.use(asyncHandler(clientidMiddleware.verify));
+ //app.use(asyncHandler(clientidMiddleware.verify));
 
 
 
