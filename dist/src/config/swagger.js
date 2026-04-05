@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerOptions = void 0;
 const port = process.env.PORT || 4000;
+const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `http://localhost:${port}`;
 exports.swaggerOptions = {
     definition: {
         openapi: "3.0.0",
@@ -10,7 +11,7 @@ exports.swaggerOptions = {
             version: "1.0.0",
             description: "API documentation for Email Marketing Platform",
         },
-        servers: [{ url: `http://localhost:${port}` }, { url: `http://192.168.1.67:${port}` }],
+        servers: [{ url: baseUrl }],
         components: {
             securitySchemes: {
                 bearerAuth: { type: "http", scheme: "bearer", bearerFormat: "JWT" },
