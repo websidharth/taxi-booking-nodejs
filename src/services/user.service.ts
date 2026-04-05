@@ -7,7 +7,7 @@ import {
   UpdateUserDto,
   UserDto,
 } from "../dtos/user.dto";
-import IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
+import type IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
 import { Role } from "../enum/user.enum";
 import { CreateUserModel } from "../models/user.model";
 import {
@@ -18,7 +18,7 @@ import {
 import bcrypt from "bcryptjs";
 import { users } from "@prisma/client";
 import { generateOtp } from "../utils/otp.util";
-import { IDateTimeService } from "./interfaces/idatetime.service";
+import type { IDateTimeService } from "./interfaces/idatetime.service";
 
 @injectable()
 export class UserService implements IUserService {

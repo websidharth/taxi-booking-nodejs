@@ -1,4 +1,4 @@
-import IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
+import type IUnitOfWork from "../repository/interfaces/iunitofwork.repository";
 import { IEmailService } from "./interfaces/Iemail.service";
 import { CreateEmailModel } from "../models/email.model";
 import { UserEmailDto } from "../dtos/email.dto";
