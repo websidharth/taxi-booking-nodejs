@@ -1,0 +1,11 @@
+export declare const generateUserGUID: () => string;
+export declare const generateUserGUIDWithPrefix: () => string;
+export declare const generateCustomId: () => number;
+export declare const userAge: (dateOfBirth: string | Date) => number;
+export declare const getCustomId: () => number;
+export declare const getAdmissionId: (lastUser: string) => string;
+export declare const buildUserName: (firstName: string, lastName: string) => string;
+export declare const createUserName: (firstName: string, lastName: string) => string;
+export declare const nowISO: () => string;
+export declare const generate4DigitOtp: () => string;
+//# sourceMappingURL=authHelpers.service.d.ts.map
