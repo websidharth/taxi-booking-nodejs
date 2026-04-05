@@ -11,8 +11,6 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const swagger_1 = require("./src/config/swagger");
 const index_routes_1 = __importDefault(require("./src/routes/index.routes"));
-const asyncHandler_middleware_1 = __importDefault(require("./src/middleware/asyncHandler.middleware"));
-const clientid_middleware_1 = __importDefault(require("./src/middleware/clientid.middleware"));
 const errorHandler_middleware_1 = __importDefault(require("./src/middleware/errorHandler.middleware"));
 // Routes
 dotenv_1.default.config();
@@ -33,14 +31,20 @@ app.use(express_1.default.json());
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "views", "index.html"));
 // });
-app.use((0, asyncHandler_middleware_1.default)(clientid_middleware_1.default.verify));
+//app.use(asyncHandler(clientidMiddleware.verify));
 //route setup --- SWAGGER ---
-app.use("/", index_routes_1.default);
 const swaggerDocs = (0, swagger_jsdoc_1.default)(swagger_1.swaggerOptions);
-app.use("/api", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocs, { swaggerOptions: {
+app.use("/", ...swagger_ui_express_1.default.serveFiles(swaggerDocs, {
+    swaggerOptions: {
         deepLinking: false,
     },
 }));
+app.get("/", swagger_ui_express_1.default.setup(swaggerDocs, {
+    swaggerOptions: {
+        deepLinking: false,
+    },
+}));
+app.use("/", index_routes_1.default);
 // Error-handling middleware
 app.use(errorHandler_middleware_1.default);
 app.listen(port, () => {
