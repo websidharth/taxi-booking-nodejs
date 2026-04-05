@@ -39,15 +39,16 @@ app.use(express.json());
 
 
 //route setup --- SWAGGER ---
-app.use("/", routes);
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
  
-app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerDocs, 
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs, 
   {swaggerOptions: {
       deepLinking: false,
     },
   })
 );
+
+app.use("/", routes);
 
  
 
