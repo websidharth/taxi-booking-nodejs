@@ -30,15 +30,15 @@ export class CommunicationService {
   async sendAndLogEmail({ usersId, to, subject, html }: SendEmailParams) {
     const emailResp = await sendEmail(to, subject, html);
 
-    await prisma.userEmail.create({
-      data: {
-        userId: usersId,
-        recipient: to,
-        subject,
-        htmlContent: html,
-        emailResponse: JSON.parse(JSON.stringify(emailResp)),
-      },
-    });
+    // await prisma.userEmail.create({
+    //   data: {
+    //     userId: usersId,
+    //     recipient: to,
+    //     subject,
+    //     htmlContent: html,
+    //     emailResponse: JSON.parse(JSON.stringify(emailResp)),
+    //   },
+    // });
 
     return emailResp;
   }

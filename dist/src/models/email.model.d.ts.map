@@ -1,0 +1,1 @@
+{"version":3,"file":"email.model.d.ts","sourceRoot":"","sources":["../../../src/models/email.model.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,gBAAgB;IAC/B,MAAM,CAAC,EAAE,MAAM,CAAC;IAChB,YAAY,CAAC,EAAE,MAAM,CAAC;IACtB,SAAS,EAAE,MAAM,CAAC;IAClB,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,WAAW,EAAE,MAAM,CAAC;IACpB,aAAa,CAAC,EAAE,GAAG,GAAG,IAAI,CAAC;CAC5B"}

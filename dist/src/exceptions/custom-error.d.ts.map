@@ -1,0 +1,1 @@
+{"version":3,"file":"custom-error.d.ts","sourceRoot":"","sources":["../../../src/exceptions/custom-error.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,OAAO,OAAO,WAAY,SAAQ,KAAK;IAC5C,OAAO,EAAG,MAAM,CAAC;IACjB,MAAM,EAAG,MAAM,CAAC;IAChB,cAAc,EAAG,GAAG,CAAC;gBAET,OAAO,EAAE,MAAM,EAAE,MAAM,GAAE,MAAY,EAAE,cAAc,GAAE,GAAe;CAMnF"}

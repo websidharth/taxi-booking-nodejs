@@ -1,0 +1,1 @@
+{"version":3,"file":"custom-response.d.ts","sourceRoot":"","sources":["../../../src/dtos/custom-response.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,WAAW,cAAc,CAAC,CAAC;IACvC,OAAO,EAAE,OAAO,CAAC;IACjB,MAAM,CAAC,EAAE,MAAM,EAAE,CAAC;IAClB,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,IAAI,CAAC,EAAE,CAAC,CAAC;CACV"}

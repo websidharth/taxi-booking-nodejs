@@ -1,0 +1,1 @@
+{"version":3,"file":"idatetime.service.d.ts","sourceRoot":"","sources":["../../../../src/services/interfaces/idatetime.service.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,gBAAgB;IAC/B,GAAG,IAAI,IAAI,CAAC;IACZ,MAAM,IAAI,MAAM,CAAC;IACjB,YAAY,IAAI,MAAM,CAAC;IACvB,cAAc,CAAC,WAAW,CAAC,EAAE,OAAO,GAAG,MAAM,CAAC;IAC9C,UAAU,CAAC,OAAO,EAAE,MAAM,GAAG,IAAI,CAAC;CACnC"}
